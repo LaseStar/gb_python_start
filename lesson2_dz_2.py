@@ -18,6 +18,19 @@ user_list = ['в', '5', 'часов', '17', 'минут', 'температур�
 new_list = []
 # пишем цикл для выполнения условия задачи
 for item in user_list:
+    # Можно через функцию isdigit()
+    # if item.isdigit():
+    #     number = int(item)
+    #     new_list.append('"')
+    #     if len(str(number)) != len(item):
+    #         new_list.append(f'+{number:02d}')
+    #     else:
+    #         new_list.append(f'{number:02d}')
+    #     new_list.append('"')
+    # else:
+    #     new_list.append(item)
+
+    # Но мне так больше нравится ))
     try:
         number = int(item)
         new_list.append('"')
@@ -33,4 +46,3 @@ message = ''
 message = ' '.join(new_list)
 
 print(message)
-
