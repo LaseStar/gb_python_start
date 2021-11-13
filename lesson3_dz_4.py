@@ -45,7 +45,19 @@ def thesaurus_adv(*names_surnames):
     return result_notebook
 
 
-user_notebook = thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева")
+def thesaurus_adv_teacher(*names_surnames):
+    result_notebook = {}
+    for name_surname in names_surnames:
+        name, surname = name_surname.split()
+        result_notebook.setdefault(surname[0], {})
+        result_notebook[surname[0]].setdefault(name[0], [])
+        result_notebook[surname[0]][name[0]].append(name_surname)
+
+    return result_notebook
+
+
+# user_notebook = thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева")
+user_notebook = thesaurus_adv_teacher("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева")
 print(user_notebook)
 
 # Сортируем по ключу
