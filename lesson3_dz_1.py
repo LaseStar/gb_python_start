@@ -10,10 +10,14 @@
 # lower() - на случай случайного ввода с болшой буквы
 def num_translate(eng_nub):
     eng_nub_lower = eng_nub.lower()
-    if eng_nub_lower in interpreter:
-        return print(interpreter[eng_nub_lower])
-    else:
-        return None
+    # можно так
+    # if eng_nub_lower in interpreter:
+    #     return print(interpreter[eng_nub_lower])
+    # else:
+    #     return None
+
+    # можно проще
+    return print(interpreter.get(eng_nub_lower))
 
 
 # Создаем ее в не тела функции чтобы не вызывать каждый раз
