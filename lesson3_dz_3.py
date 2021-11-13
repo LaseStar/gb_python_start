@@ -15,11 +15,17 @@ def thesaurus(*names):
     print(user_list)
     for name in user_list:
         first_letter = name[0]
-        if first_letter in notebook:
-            names = notebook[first_letter]
-            names.append(name)
-        else:
-            notebook[first_letter] = [name]
+        # Можно так
+        # if first_letter in notebook:
+        #     names = notebook[first_letter]
+        #     names.append(name)
+        # else:
+        #     notebook[first_letter] = [name]
+
+        # Можно проще
+        notebook.setdefault(first_letter, [])
+        notebook[first_letter].append(name)
+
     return notebook
 
 
